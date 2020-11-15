@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf8">
+</head>
+
+<body>
+    <h2>{{session.name}}</h2>
+    <div>{{session.track}}</div>
+    <div>Prévue du {{session.date | date: 'd MMM y'}} pendant {{session.duree}} jours à {{session.local}}</div>
+    <li *ngIf="session.participants < 20; then ok else notok"></li>
+    <ng-template #ok>Encore {{20 - session.participants}} places sont disponibles!</ng-template>
+    <ng-template #notok>Session Complete!</ng-template>
+    <div>{{session.participants}} Participants</div>
+    <div class="tools">
+        <a class="delete">
+            Details
+        </a>
+        <a  (click)="inscrire()" class="inscrire">
+            Inscription
+        </a>
+        <a class="partager">
+            Partager
+        </a>
+    </div>
+</body>
+
+</html>
