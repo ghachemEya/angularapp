@@ -1,7 +1,7 @@
 import { Directive, HostBinding, Input } from '@angular/core';
 
 @Directive({
-  selector: '[appInscriptionDisabledDirective]'
+  selector: '[appInscriptionDisabled]'
 })
 export class InscriptionDisabledDirectiveDirective {
   @HostBinding('class.link-is-disabled') status: boolean;
